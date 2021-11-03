@@ -1,5 +1,5 @@
 # KRR Project - Plan merging
-Author : Florian & Aurélien SIMON
+Author : Florian Franz & Aurélien SIMON
 
 
 ## Paper Section
