@@ -23,5 +23,5 @@ init(object(order, 1), value(1, 1)).
 init(object(order, 2), value(2, 1)).
 
 %occurs
-occurs(object(robot,1), action(move,(0,1),1)).
-occurs(object(robot,2), action(move,(-1,0),1)).
+occurs(object(robot,1), action(move, (1,0)),1).
+occurs(object(robot,2), action(move, (-1,0)),1).
