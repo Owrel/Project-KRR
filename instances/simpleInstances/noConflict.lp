@@ -22,5 +22,5 @@ init(object(product, 1), value(on, (2,1))).
 init(object(order, 1), value(1, 1)).
 init(object(order, 1), value(2, 1)).
 %occurs
-%occurs(object(robot,1), action(move,(1,2),1)).
-%occurs(object(robot,2), action(move,(2,1),1)).
+occurs(object(robot,1), action(move,(1,2),1)).
+occurs(object(robot,2), action(move,(2,1),1)).
