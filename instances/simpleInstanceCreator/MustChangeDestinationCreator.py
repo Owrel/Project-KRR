@@ -21,4 +21,4 @@ def instanceFromNumberOfRobots(numRobots):
         for step in range(distance) :
             instance += "occurs(object(robot,"+str(i)+"), action(move, (0,1)),"+str(step)+")."
     return instance
-print(instanceFromNumberOfRobots(5))
+print(instanceFromNumberOfRobots(10))
