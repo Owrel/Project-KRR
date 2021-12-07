@@ -10,5 +10,4 @@ edge(N,N) :- node(N,X,Y).
 edge(X,Y, X',Y') :- node(N,X,Y), node(N',X',Y'), edge(N,N').
 edge(X,Y, X',Y') :- node(N,X,Y), node(N',X',Y'), edge(N,N').
 
-% Finding path for each agents
-path(R,X,Y,0) :- init(object(robot,R), value(at,(X,Y))).
+

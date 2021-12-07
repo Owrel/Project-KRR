@@ -16,17 +16,17 @@ edge(N,N) :- node(N,X,Y).
 
 edge(X,Y, X',Y') :- node(N,X,Y), node(N',X',Y'), edge(N,N').
 edge(X,Y, X',Y') :- node(N,X,Y), node(N',X',Y'), edge(N,N').
-% % Finding path for each agents
-path(R,X,Y,0) :- init(object(robot,R), value(at,(X,Y))).
+% % Finding opath for each agents
+opath(R,X,Y,0) :- init(object(robot,R), value(at,(X,Y))).
 
 
-{path(R,X',Y',T+1)}1 :- path(R,X,Y,T), edge(X,Y,X',Y'), T<MS, maxstep(MS),  goal(GX,GY,R,_), (GX,GY)!=(X,Y).  
+{opath(R,X',Y',T+1)}1 :- opath(R,X,Y,T), edge(X,Y,X',Y'), T<MS, maxstep(MS),  goal(GX,GY,R,_), (GX,GY)!=(X,Y).  
 
-goalReached(R,T) :- goal(X,Y,R,_), path(R,X,Y,T).
-:- path(R,X,Y,S), goal(X,Y,R,_), path(R,_,_,S'), S'>S. % Stop moving after reaching a goal
+goalReached(R,T) :- goal(X,Y,R,_), opath(R,X,Y,T).
+:- opath(R,X,Y,S), goal(X,Y,R,_), opath(R,_,_,S'), S'>S. % Stop moving after reaching a goal
 :- not goalReached(R,_), init(object(robot,R), _).
 
 
-% #show goalReached/2.
-% #show path/4.
+#show goalReached/2.
+#show opath/4.
 #minimize{ T,R  : goalReached(R,T)}.
