@@ -12,7 +12,7 @@ def instanceFromNumberOfRobots(numRobots):
     # Shelves
     for i in range(1, numRobots+1 ) :
         instance += "init(object(shelf,"+str(i)+"), value(at,(1,"+str(i+numRobots)+"))).\n"
-        instance += "init(object(product, "+str(i)+"), value(on, 1)).\n"
+        instance += "init(object(product, "+str(i)+"), value(on,(1,"+str(i)+"))).\n"
         instance += "init(object(order, "+str(i)+"), value("+str(i)+", 1)).\n"
     # Move Commands
     distance = -1
