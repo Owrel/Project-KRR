@@ -26,9 +26,9 @@ def instanceFromNumberOfRobots(numRobots):
         downMoves = shelfId + numRobots - robot
         # Move Left
         for leftMove in range(leftMoves) :
-            instance += "occurs(object(robot,"+str(robot)+"), action(move, (-1,0)),"+str(leftMove)+")."
+            instance += "occurs(object(robot,"+str(robot)+"), action(move, (-1,0)),"+str(leftMove+1)+")."
         # Move Down
         for downMove in range(downMoves):
-            instance += "occurs(object(robot,"+str(robot)+"), action(move, (0,1)),"+str(leftMoves+downMove)+")."
+            instance += "occurs(object(robot,"+str(robot)+"), action(move, (0,1)),"+str(leftMoves+downMove+1)+")."
     return instance
-print(instanceFromNumberOfRobots(15))
+print(instanceFromNumberOfRobots(5))

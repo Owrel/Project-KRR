@@ -18,6 +18,6 @@ def instanceFromNumberOfRobots(numRobots, requiredSteps):
     # Move Commands
     for i in range(1, numRobots +1) :
         for step in range(requiredSteps) :
-            instance += "occurs(object(robot,"+str(i)+"), action(move, (1,0)),"+str(step)+")."
+            instance += "occurs(object(robot,"+str(i)+"), action(move, (1,0)),"+str(step+1)+")."
     return instance
 print(instanceFromNumberOfRobots(50,5))
