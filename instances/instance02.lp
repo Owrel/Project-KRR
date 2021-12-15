@@ -147,21 +147,21 @@ init(object(robot,1), value(energy,0)).
 init(object(robot,2), value(at,(2,1))).
 init(object(robot,2), value(max_energy,0)).
 init(object(robot,2), value(energy,0)).
-init(object(robot,4), value(at,(20,10))).
-init(object(robot,4), value(max_energy,0)).
-init(object(robot,4), value(energy,0)).
-init(object(robot,7), value(at,(20,1))).
-init(object(robot,7), value(max_energy,0)).
-init(object(robot,7), value(energy,0)).
 init(object(robot,3), value(at,(6,1))).
 init(object(robot,3), value(max_energy,0)).
 init(object(robot,3), value(energy,0)).
+init(object(robot,4), value(at,(20,10))).
+init(object(robot,4), value(max_energy,0)).
+init(object(robot,4), value(energy,0)).
 init(object(robot,5), value(at,(8,1))).
 init(object(robot,5), value(max_energy,0)).
 init(object(robot,5), value(energy,0)).
 init(object(robot,6), value(at,(16,1))).
 init(object(robot,6), value(max_energy,0)).
 init(object(robot,6), value(energy,0)).
+init(object(robot,7), value(at,(20,1))).
+init(object(robot,7), value(max_energy,0)).
+init(object(robot,7), value(energy,0)).
 init(object(robot,8), value(at,(14,1))).
 init(object(robot,8), value(max_energy,0)).
 init(object(robot,8), value(energy,0)).
@@ -190,34 +190,34 @@ init(object(robot,16), value(at,(20,6))).
 init(object(robot,16), value(max_energy,0)).
 init(object(robot,16), value(energy,0)).
 init(object(shelf,1), value(at,(14,7))).
-init(object(product,0),value(on,(1,1))).
+init(object(product,1),value(on,(1,1))).
 init(object(shelf,2), value(at,(10,7))).
-init(object(product,1),value(on,(2,1))).
+init(object(product,2),value(on,(2,1))).
 init(object(shelf,3), value(at,(6,7))).
-init(object(product,2),value(on,(3,1))).
+init(object(product,3),value(on,(3,1))).
 init(object(shelf,4), value(at,(18,7))).
-init(object(product,3),value(on,(4,1))).
+init(object(product,4),value(on,(4,1))).
 init(object(shelf,5), value(at,(4,4))).
-init(object(product,4),value(on,(5,1))).
+init(object(product,5),value(on,(5,1))).
 init(object(shelf,6), value(at,(6,4))).
-init(object(product,5),value(on,(6,1))).
+init(object(product,6),value(on,(6,1))).
 init(object(shelf,7), value(at,(4,7))).
-init(object(product,6),value(on,(7,1))).
+init(object(product,7),value(on,(7,1))).
 init(object(shelf,8), value(at,(8,4))).
-init(object(product,7),value(on,(8,1))).
+init(object(product,8),value(on,(8,1))).
 init(object(shelf,9), value(at,(10,4))).
-init(object(product,8),value(on,(9,1))).
+init(object(product,9),value(on,(9,1))).
 init(object(shelf,10), value(at,(8,7))).
-init(object(product,9),value(on,(10,1))).
+init(object(product,10),value(on,(10,1))).
 init(object(shelf,11), value(at,(12,4))).
-init(object(product,10),value(on,(11,1))).
+init(object(product,11),value(on,(11,1))).
 init(object(shelf,12), value(at,(14,4))).
-init(object(product,11),value(on,(12,1))).
+init(object(product,12),value(on,(12,1))).
 init(object(shelf,13), value(at,(12,7))).
-init(object(product,12),value(on,(13,1))).
+init(object(product,13),value(on,(13,1))).
 init(object(shelf,14), value(at,(16,7))).
-init(object(product,13),value(on,(14,1))).
+init(object(product,14),value(on,(14,1))).
 init(object(shelf,15), value(at,(16,4))).
-init(object(product,14),value(on,(15,1))).
+init(object(product,15),value(on,(15,1))).
 init(object(shelf,16), value(at,(18,4))).
-init(object(product,15),value(on,(16,1))).
+init(object(product,16),value(on,(16,1))).

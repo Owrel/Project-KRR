@@ -53,7 +53,7 @@ occurs(object(robot, R), action(move,(X'-X, Y'-Y)),S) :- path(R,X,Y,S,_),path(R,
 
 #show goalreached/4.
 
-#maximize{1@1,R : path(R,X,Y,_,_), opath(R,X,Y,T), T>=1}.
+% #maximize{1@1,R : path(R,X,Y,_,_), opath(R,X,Y,T), T>=1}.
 #maximize{ 1@3,R : goalreached(R,S,_,_) ; 0@2,0}. % Try to maximize the number of agent that reach a goal ('; 0@2,0' makes the program not searching for all the path if no optimization exist)
 #minimize{ S@2,R  : goalreached(R,S,_,_) ; 0@1,0}.
 
