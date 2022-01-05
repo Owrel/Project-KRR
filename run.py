@@ -7,8 +7,8 @@ import os
 reseting = False
 
 # Getting instances
-instances = ['instance03']
-merger = 'graphMerger.lp'
+instances = ['instance05']
+merger = 'graphMergerDirection.lp'
 pathfinder = 'path.lp'
 
 
@@ -36,6 +36,7 @@ for instance in instances:
         f = open(path_instances+instance+".path", "r")
         path = f.read()
         pathfinding_time = "Imported"
+        # path = ''
     else:
 
         f = open(pathfinding + pathfinder, "r")
