@@ -65,9 +65,4 @@ new_conflict(N,N',T) :- global_step(N,T+1,X,Y), global_step(N',T,X,Y), global_st
 
 occurs(object(robot, N), action(move,(X'-X, Y'-Y)),T) :- global_step(N,T,X,Y),global_step(N,T+1,X',Y').
 #show occurs/3.
-% #show before_conflict_node/3.
 
-
-% #show additional_node/3. 
-% #minimize {1,X,Y,N : additional_node(X,Y,N)}.
-% #minimize {1@2,N,T : new_step(N,T,X,Y)}.

@@ -8,7 +8,7 @@ reseting = False
 
 # Getting instances
 instances = ['instance01']
-merger = 'graphMergerDirection.lp'
+merger = 'graphMergerv2.lp'
 pathfinder = 'path.lp'
 
 
