@@ -1,10 +1,12 @@
 #include <incmode>.
 #const istop  = "SAT".
-#const imin   = 2.
+#const imin   = 3.
+#const iquery = 1.
 #program base.
-#include "../instances/simpleInstances/mustChangeDestinationOfRobot.lp".
+#include "../instances/priorityWaiting3Groups.lp".
+#include "../instances/priorityWaiting3GroupsPlans.lp".
 % Program
-horizon(0.. 7).
+horizon(0.. 10).
 layer(0).
 direction(0..1).
 direction(-1).
@@ -46,6 +48,7 @@ sameTileConflict((R1, R2), (X,Y), T, L) :- position(R1, (X,Y), T, L), position(R
 
 % swap conflict when switching positions
 swapConflict((R1, R2), T, L) :- position(R1, (X1,Y1), T, L), position(R2, (X2,Y2), T, L), position(R1, (X2,Y2), T-1, L), position(R2, (X1, Y1), T-1, L), R1 != R2.
+
 %swap conflict when one robot moves ontop of another
 moveOntoRobotConflict((R1, R2), T, L) :- position(R1, (X,Y), T, L), position(R2, (X,Y), T, L), move(R2,(XD, YD), T, L), direction(XD), direction(YD), XD=0, YD=0, R1 != R2.
 
@@ -76,7 +79,7 @@ move(R1, (XD1, YD1), T, L) :- goalSwapOntop((R1, R2), T, L), finalMove(R1, (XD1,
 
 % OUTPUT ----------------------------------------------------------------------------------
 %#const outL =0.
-finalMove(R, (XD, YD), T) :- finalMove(R, (XD, YD), T, L), L==2.
+finalMove(R, (XD, YD), T) :- finalMove(R, (XD, YD), T, L), L==10.
 %move(R, (XD, YD), T) :- move(R, (XD, YD), T, L), L==outL.
 %swapConflict((R1, R2), T) :- swapConflict((R1,R2), T, L), L==outL.
 %moveOntoRobotConflict((R1, R2), T) :- moveOntoRobotConflict((R1, R2), T, L), L == outL.
@@ -86,7 +89,7 @@ position(R, (X, Y), T) :- position(R, (X,Y), T, L), L==1.
 %sameTileConflict(R, (X,Y), T) :- sameTileConflict(R, (X,Y), T, L), L==outL.
 
 % Iterative CHECK --------------------------------------------------------------------------
-% create new layer if there are no conflicts on the uppermost layer
+% create new layer if there are conflicts on the uppermost layer
 #program check(t).
 :- sameTileConflict((R1,R2), (X,Y), T, L), robot(R1), robot(R2), direction(X), direction(Y), horizon(T), query(t), L==t-1.
 :- swapConflict((R1,R2),  T, L), robot(R1), robot(R2), horizon(T), query(t), L==t-1.
