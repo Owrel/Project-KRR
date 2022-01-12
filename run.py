@@ -7,7 +7,7 @@ import os
 reseting = False
 
 # Getting instances
-instances = ['instance05']
+instances = ['instance01']
 merger = 'graphMergerDirection.lp'
 pathfinder = 'path.lp'
 

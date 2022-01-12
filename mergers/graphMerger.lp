@@ -10,7 +10,7 @@ edge(X,Y,X,Y) :- edge(_,_,X,Y).
 
 available_edge_from_path(X,Y,X',Y',N) :- path(X,Y,X',Y',N).
 available_edge_from_path(X,Y,X,Y,N) :- available_edge_from_path(X,Y,_,_,N).
-{available_edge_from_conflict(X,Y,X',Y',N) : edge(X,Y,X',Y'), available_edge(X,Y,_,_,N)}=0.
+{available_edge_from_conflict(X,Y,X',Y',N) : edge(X,Y,X',Y'), available_edge(X,Y,_,_,N)}.
 % {available_edge_from_conflict(X,Y,X',Y',N) : edge(X,Y,X',Y'), available_edge(_,_,X,Y,N)}.
 available_edge(X,Y,X',Y',N):- available_edge_from_conflict(X,Y,X',Y',N).
 available_edge(X,Y,X',Y',N):- available_edge_from_path(X,Y,X',Y',N).

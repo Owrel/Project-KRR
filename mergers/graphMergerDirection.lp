@@ -21,8 +21,13 @@ available_node_from_path(X,Y,N) :- path(X,Y,_,_,N).
 available_node_from_path(X,Y,N) :- end(N,X,Y).
 available_node(X,Y,N) :- available_node_from_path(X,Y,N).
 
+
 % If needed, add node to the subgraph to solve conflicts
-{additional_node(X,Y,N): node(_,X,Y), init(N,_,_), available_node(X',Y',N), |X'-X +Y'-Y| == 1}.
+
+
+{additional_node(X,Y,N): node(_,X,Y), init(N,_,_), available_node(X',Y',N), |X'-X +Y'-Y| == 1, not available_node(X,Y,N'), init(N',_,_), N'!=N}. % To split
+
+
 available_node(X,Y,N) :- additional_node(X,Y,N).
 
 % An additional node have to be used at some point
@@ -61,7 +66,6 @@ new_conflict(N,N',T) :- global_step(N,T+1,X,Y), global_step(N',T,X,Y), global_st
 occurs(object(robot, N), action(move,(X'-X, Y'-Y)),T) :- global_step(N,T,X,Y),global_step(N,T+1,X',Y').
 #show occurs/3.
 % #show before_conflict_node/3.
-
 
 
 % #show additional_node/3. 
