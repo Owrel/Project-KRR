@@ -1,1 +1,24 @@
-init(object(robot,1),value(max_energy,0)). init(object(robot,1),value(energy,0)). init(object(robot,2),value(max_energy,0)). init(object(robot,2),value(energy,0)). init(object(robot,3),value(max_energy,0)). init(object(robot,3),value(energy,0)). init(object(node,2),value(at,(2,1))). init(object(node,7),value(at,(2,2))). init(object(node,12),value(at,(2,3))). init(object(node,22),value(at,(2,5))). init(object(node,17),value(at,(2,4))). init(object(node,18),value(at,(3,4))). init(object(node,19),value(at,(4,4))). init(object(node,16),value(at,(1,4))). init(object(node,20),value(at,(5,4))). init(object(robot,1),value(at,(2,3))). init(object(robot,2),value(at,(2,1))). init(object(robot,3),value(at,(5,4))). init(object(shelf,1),value(at,(2,4))). init(object(shelf,2),value(at,(2,5))). init(object(shelf,3),value(at,(1,4))). node(2,2,1). node(7,2,2). node(12,2,3). node(22,2,5). node(17,2,4). node(18,3,4). node(19,4,4). node(16,1,4). node(20,5,4). edge(18,17). edge(16,17). edge(17,18). edge(19,18). edge(18,19). edge(20,19). edge(17,16). edge(19,20). edge(7,2). edge(2,7). edge(12,7). edge(7,12). edge(17,12). edge(17,22). edge(12,17). edge(22,17). edge(2,2). edge(7,7). edge(12,12). edge(22,22). edge(17,17). edge(18,18). edge(19,19). edge(16,16). edge(20,20). edge(2,1,2,2). edge(2,1,2,1). edge(2,2,2,1). edge(2,2,2,3). edge(2,2,2,2). edge(2,3,2,2). edge(2,3,2,4). edge(2,3,2,3). edge(2,5,2,4). edge(2,5,2,5). edge(2,4,3,4). edge(2,4,1,4). edge(2,4,2,3). edge(2,4,2,5). edge(2,4,2,4). edge(3,4,2,4). edge(3,4,4,4). edge(3,4,3,4). edge(4,4,3,4). edge(4,4,5,4). edge(4,4,4,4). edge(1,4,2,4). edge(1,4,1,4). edge(5,4,4,4). edge(5,4,5,4). end(1,2,4). end(2,2,5). end(3,1,4). init(1,2,3). init(2,2,1). init(3,5,4). path(2,3,2,4,1). path(2,1,2,2,2). path(5,4,4,4,3). path(4,4,3,4,3). path(2,2,2,3,2). path(2,3,2,4,2). path(3,4,2,4,3). path(2,4,1,4,3). path(2,4,2,5,2). goalReached(1). goalReached(2). goalReached(3). step(1,0,2,3). step(2,0,2,1). step(3,0,5,4). step(3,1,4,4). step(2,1,2,2). step(1,1,2,4). step(2,2,2,3). step(3,2,3,4). step(3,3,2,4). step(2,3,2,4). step(2,4,2,5). step(3,4,1,4). maxstep(50).
+path(2,3,2,4,1).
+step(1,0,2,3).
+step(1,1,2,4).
+
+path(2,1,2,2,2).
+path(2,2,2,3,2).
+path(2,3,2,4,2).
+path(2,4,2,5,2).
+step(2,0,2,1).
+step(2,1,2,2).
+step(2,2,2,3).
+step(2,3,2,4).
+step(2,4,2,5).
+
+path(2,4,1,4,3).
+path(3,4,2,4,3).
+path(4,4,3,4,3).
+path(5,4,4,4,3).
+step(3,0,5,4).
+step(3,1,4,4).
+step(3,2,3,4).
+step(3,3,2,4).
+step(3,4,1,4).
+
