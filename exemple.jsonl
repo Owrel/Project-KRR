@@ -5,9 +5,14 @@
     "problemType" : "TargetAssignment",
     "objective" : "timeSpan",
     "instance" : "instance01.lp",
-    "groundingTime" : 1.1642603874206543,
-    "solvingTime" : 1.450636625289917,
-    "total" : 2.6148970127105713,
+    "statistics" : {
+        "groundingTime" : 1.1642603874206543,
+        "solvingTime" : 1.450636625289917,
+        "total" : 2.6148970127105713,
+        "atoms" : 8102.0,
+        "rules" : 1670.0
+    },
+    
     "info" : "Node approach with diamond technique solving, robot can wait",
-    "solution" : ["occurs..."]
+    "model" : ["occurs..."]
 }
