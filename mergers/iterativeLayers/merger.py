@@ -37,7 +37,7 @@ def filter_atoms(keep, atoms):
 class Iterations:
     debug = False
     output_models = 1
-    max_layers = 2
+    max_layers = 4
     max_models_per_layer= 1
     models_per_layer = [0 for i in range(max_layers)]
     next_positions = ""
@@ -80,7 +80,6 @@ class Iterations:
     def on_model(self, layer):
         def do_something(m):
             # abort if there are too many models
-
             if(not self.should_continue(layer)):
                 #if self.debug:
                 #    print("aborting at layer ", layer)

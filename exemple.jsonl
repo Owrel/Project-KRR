@@ -4,6 +4,7 @@
     "solverName" : "Target Assignement - Node Approach",
     "problemType" : "TargetAssignment",
     "objective" : "timeSpan",
+    "objective_cost": 50,
     "instance" : "instance01.lp",
     "statistics" : {
         "groundingTime" : 1.1642603874206543,
@@ -12,7 +13,6 @@
         "atoms" : 8102.0,
         "rules" : 1670.0
     },
-    
     "info" : "Node approach with diamond technique solving, robot can wait",
     "model" : ["occurs..."]
 }
