@@ -1,0 +1,13 @@
+{
+    
+    "groupName" : "Aurélien & Florian",
+    "solverName" : "Target Assignement - Node Approach",
+    "problemType" : "TargetAssignment",
+    "objective" : "timeSpan",
+    "instance" : "instance01.lp",
+    "groundingTime" : 1.1642603874206543,
+    "solvingTime" : 1.450636625289917,
+    "total" : 2.6148970127105713,
+    "info" : "Node approach with diamond technique solving, robot can wait",
+    "solution" : ["occurs..."]
+}

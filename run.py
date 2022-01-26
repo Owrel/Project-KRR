@@ -69,8 +69,8 @@ def compute_initial_path(instance, pathfinder):
 reseting = False
 
 # Getting instances
-instances = ['bigTimePerformance']
-merger = 'directionMergerRandomTarget.lp'
+instances = ['instance08']
+merger = 'directionMerger.lp'
 pathfinder = 'path.lp'
 
 
