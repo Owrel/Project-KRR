@@ -70,7 +70,7 @@ reseting = False
 
 # Getting instances
 instances = ['instance08']
-merger = 'directionMerger.lp'
+merger = 'EdgeApproach/TargetAssignmentDiamond.lp'
 pathfinder = 'path.lp'
 
 

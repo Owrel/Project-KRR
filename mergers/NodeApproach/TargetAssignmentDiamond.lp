@@ -20,8 +20,6 @@ conflict(N',N,T)    :- step(N,_,X,Y),   end(N',X,Y), N!=N', step(N',T,X,Y).
 available_node(X,Y,N) :- step(N,T,X,Y).
 
 
-
-
 position(X,Y,N,0) :- init(N,X,Y).
 
 {move(DX,DY,N,T): direction(DX,DY)}1 :- time(T),  robot(N).
@@ -54,9 +52,6 @@ diamond(X+DX,Y+DY,N,T+1) :- diamond(X,Y,N,T), direction(DX,DY), node(X+DX,Y+DY),
 
 diamond(X,Y,N) :- diamond(X,Y,N,_).
 available_node(X,Y,N) :- diamond(X,Y,N).
-
-
-
 
 
 % Showing section
