@@ -1,7 +1,6 @@
 #include <incmode>.
 #const istop  = "SAT".
-#const imin   = 2.
-#const imax = 5.
+#const imin   = 3.
 #const istep = 1.
 #program base.
 #include "../instances/priorityWaiting3Groups.lp".
@@ -27,7 +26,7 @@ position(R, (X, Y), 0, 0) :- init(object(robot,R), value(at,(X,Y))).
 :- conflict(t), query(t).
 #program step(t).
 layer(1..t) :- query(t), maxLayer(L), t<L.
-conflict(L) :- position(R1, (X,Y), T, L), position(R2, (X,Y), T, L),  robot(R1), robot(R2), R1!=R2, layer(L).
+conflict(L) :- position(R1, (X,Y), T, L), position(R2, (X,Y), T, L), horizon(T), robot(R1), robot(R2), R1!=R2, layer(L).
 
 % collect finalMoves as all Moves on current Layer and all moves on layers below if you dont have one yet
 finalMove(R, (XD, YD), T, L) :- move(R, (XD, YD), T, L).
@@ -46,19 +45,17 @@ position(R, (X+XD,Y+YD), T, L) :- position(R, (X, Y), T-1, L), finalMove(R, (XD,
 % Find Conflicts ------------------------------------------------
 
 % find conflicts since it should only include those that are not swap conflicts both robots must have moved
-sameTileConflict((R1, R2), (X,Y), T, L) :- position(R1, (X,Y), T, L), position(R2, (X,Y), T, L), R1!=R2, not finalMove(R1, (0, 0), T, L), not finalMove(R2, (0, 0), T, L).
+sameTileConflict((R1, R2), (X,Y), T, L) :- position(R1, (X,Y), T, L), position(R2, (X,Y), T, L), R1!=R2, not sameTileConflict((R2,R1), (X,Y), T, L), not finalMove(R1, (0, 0), T, L), not finalMove(R2, (0, 0), T, L).
+
 % swap conflict when switching positions
 swapConflict((R1, R2), T, L) :- position(R1, (X1,Y1), T, L), position(R2, (X2,Y2), T, L), position(R1, (X2,Y2), T-1, L), position(R2, (X1, Y1), T-1, L), R1 != R2.
 
 %swap conflict when one robot moves ontop of another
 moveOntoRobotConflict((R1, R2), T, L) :- position(R1, (X,Y), T, L), position(R2, (X,Y), T, L), move(R2,(XD, YD), T, L), direction(XD), direction(YD), XD=0, YD=0, R1 != R2.
 
-% wait on conflict sameTileConflict
-%{wait((R1,R2), T, L)}1 :- sameTileConflict((R1, R2), (X,Y), T, L-1), R1 != R2.
-% there must be only one wait move on each layer
-:- wait((R1, R2), T, L), wait((R1, R2), ET, L), ET<T.
-:- wait((R1, R2), T, L), wait((R2, R1), ET, L), ET<T.
-:- wait((R1, R2), T, L), wait((R2,R1), T, L).
+% wait on conflict if not waited yet and other didnt either
+wait((R1,R2), T, L) :- sameTileConflict((R1, R2), (X,Y), T, L-1), R1 != R2, #count{ET : wait((R1,R2),ET,L) ,ET<T, horizon(ET)}<1 ,#count{ET : wait((R2,R1),ET,L) ,ET<T, horizon(ET)}<1.
+
 % goal swap on swapConflict and no wait operation on this layer
 goalSwap((R1, R2), T, L) :- swapConflict((R1, R2), T, L-1), #count{TIME : wait(R1, TIME,L), horizon(TIME)}<1.
 % goalswap when one robot moves ontop of another
@@ -104,8 +101,8 @@ position(R, (X, Y), T) :- position(R, (X,Y), T, L), L==1.
 %#show wait/3.
 %#show finalMove/3.
 %#show finalMove/4.
-%#show position/3.
+%#show position/4.
 %#show query/1.
 #show layer/1.
-%#show conflict/1.
+#show conflict/1.
 %#show wait/2.

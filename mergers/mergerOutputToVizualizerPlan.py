@@ -6,7 +6,6 @@ def outputToVizualizerPlan(output):
         if "finalMove" == atom[0:9]:
             splitAtom = atom.replace("finalMove", "").replace("(", "").replace(")","").split(",")
             visualizerPlan+= "occurs(object(robot,{}), action(move, ({},{})),{}).\n".format(splitAtom[0], splitAtom[1], splitAtom[2], splitAtom[3])
-
     return visualizerPlan
 
 import sys

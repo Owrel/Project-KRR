@@ -1,0 +1,1 @@
+:- positionin(R1, (X,Y), T), positionin(R2, (X,Y), T), R1!= R2.

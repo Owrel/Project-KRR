@@ -44,7 +44,7 @@ sameTileConflict((R1, R2), (X,Y), T, L) :- position(R1, (X,Y), T, L), position(R
 
 % swap conflict when switching positions
 swapConflict((R1, R2), T, L) :- position(R1, (X1,Y1), T, L), position(R2, (X2,Y2), T, L), position(R1, (X2,Y2), T-1, L), position(R2, (X1, Y1), T-1, L), R1 != R2.
-%swap conflict when one robot moves ontop of another
+% swap conflict when one robot moves ontop of another
 moveOntoRobotConflict((R1, R2), T, L) :- position(R1, (X,Y), T, L), position(R2, (X,Y), T, L), move(R2,(XD, YD), T, L), direction(XD), direction(YD), XD=0, YD=0, R1 != R2.
 
 % wait on conflict if not waited yet and other didnt either
