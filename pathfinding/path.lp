@@ -30,6 +30,7 @@ step(N,S+1,X',Y') :- step(N,S,X,Y),path(X,Y,X',Y',N,S), end(N,X',Y').
 
 #show step/4.
 #show path(X,Y,X',Y',N) : path(X,Y,X',Y',N,S). 
+#show init/2.
 #minimize {1,S: path(X,Y,X',Y',N,S)}.
 
 

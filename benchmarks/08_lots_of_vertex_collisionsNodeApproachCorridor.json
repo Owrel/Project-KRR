@@ -1,0 +1,12 @@
+{
+  "model": null,
+  "sat": false,
+  "merger": "NodeApproachCorridor",
+  "problemtype": "targetassignement",
+  "instance": "08_lots_of_vertex_collisions.lp",
+  "rules": 15988.0,
+  "atoms": 0.0,
+  "grounding_time": 0.02915167808532715,
+  "cpu_time": 0.04019800000000018,
+  "total_time": 0.04029393196105957
+}

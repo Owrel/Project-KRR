@@ -1,5 +1,5 @@
 % Definition of global variable
-time(1..27).
+time(1..maxtime).
 
 % Translation
 node(X,Y) :- init(object(node,N),value(_,(X,Y))).

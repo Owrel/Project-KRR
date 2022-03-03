@@ -1,0 +1,12 @@
+{
+  "model": "occurs(object(robot,1),action(move,(1,0)),1). occurs(object(robot,1),action(move,(0,-1)),2). occurs(object(robot,1),action(move,(1,0)),3). occurs(object(robot,1),action(move,(0,-1)),4)",
+  "sat": true,
+  "merger": "NodeApproachDiamondCorridor",
+  "problemtype": "targetassignement",
+  "instance": "01_no_conflict.lp",
+  "rules": 1121.0,
+  "atoms": 493.0,
+  "grounding_time": 0.00901341438293457,
+  "cpu_time": 0.013992000000000004,
+  "total_time": 0.014059066772460938
+}

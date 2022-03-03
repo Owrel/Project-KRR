@@ -1,0 +1,12 @@
+{
+  "model": null,
+  "sat": false,
+  "merger": "EdgeApproachWaitOnly",
+  "problemtype": "targetassignement",
+  "instance": "20_big_symmetric.lp",
+  "rules": 223938.0,
+  "atoms": 82961.0,
+  "grounding_time": 0.8420290946960449,
+  "cpu_time": 2.031808999999953,
+  "total_time": 2.0365591049194336
+}

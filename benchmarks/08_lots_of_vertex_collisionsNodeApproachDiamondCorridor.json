@@ -1,0 +1,12 @@
+{
+  "model": null,
+  "sat": false,
+  "merger": "NodeApproachDiamondCorridor",
+  "problemtype": "targetassignement",
+  "instance": "08_lots_of_vertex_collisions.lp",
+  "rules": 16140.0,
+  "atoms": 0.0,
+  "grounding_time": 0.034371137619018555,
+  "cpu_time": 0.043551000000000784,
+  "total_time": 0.04367685317993164
+}
