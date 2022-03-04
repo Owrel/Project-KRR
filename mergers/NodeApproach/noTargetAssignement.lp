@@ -39,6 +39,8 @@ position(X,Y,N,T) :- position(X,Y,N,T-1), not move(_,_,N,T), time(T).
 % Showing section
 %translation to occurs
 #show  occurs(object(robot,N), action(move,(DX,DY)),     T) :   move(DX,DY,N,T).
+#show new_step(N,T,X,Y) : position(X,Y,N,T).
+#show goalReached(N,T) : picked(N,T).
 #show.
 
 

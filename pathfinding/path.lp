@@ -26,11 +26,12 @@ goalReached(N) :- path(_,_,X,Y,N,S), (X,Y) == (EX,EY), end(N,EX,EY).
 step(N,0,X,Y) :- path(X,Y,_,_,N,0).
 step(N,S,X,Y) :- path(X,Y,_,_,N,S), S!=0.
 step(N,S+1,X',Y') :- step(N,S,X,Y),path(X,Y,X',Y',N,S), end(N,X',Y').
-
+old_goalReached(N,T) :- end(N,X,Y), step(N,T,X,Y).
 
 #show step/4.
 #show path(X,Y,X',Y',N) : path(X,Y,X',Y',N,S). 
 #show init/2.
+#show old_goalReached/2.
 #minimize {1,S: path(X,Y,X',Y',N,S)}.
 
 

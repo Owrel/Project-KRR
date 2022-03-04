@@ -1,12 +1,12 @@
 {
-  "model": "occurs(object(robot,1),action(move,(1,0)),0). occurs(object(robot,1),action(move,(0,-1)),1). occurs(object(robot,1),action(move,(1,0)),2). occurs(object(robot,1),action(move,(0,-1)),3). occurs(object(robot,1),action(move,(0,0)),4). occurs(object(robot,1),action(move,(0,0)),5). occurs(object(robot,1),action(move,(0,0)),6). occurs(object(robot,1),action(move,(0,0)),7). occurs(object(robot,1),action(move,(0,0)),8). occurs(object(robot,1),action(move,(0,0)),9). occurs(object(robot,1),action(move,(0,0)),10). occurs(object(robot,1),action(move,(0,0)),11). occurs(object(robot,1),action(move,(0,0)),12). occurs(object(robot,1),action(move,(0,0)),13). occurs(object(robot,1),action(move,(0,0)),14). occurs(object(robot,1),action(move,(0,0)),15). occurs(object(robot,1),action(move,(0,0)),16). occurs(object(robot,1),action(move,(0,0)),17). occurs(object(robot,1),action(move,(0,0)),18). occurs(object(robot,1),action(move,(0,0)),19). occurs(object(robot,1),action(move,(0,0)),20). occurs(object(robot,1),action(move,(0,0)),21). occurs(object(robot,1),action(move,(0,0)),22). occurs(object(robot,1),action(move,(0,0)),23). occurs(object(robot,1),action(move,(0,0)),24). occurs(object(robot,1),action(move,(0,0)),25). occurs(object(robot,1),action(move,(0,0)),26). occurs(object(robot,1),action(move,(0,0)),27). occurs(object(robot,1),action(move,(0,0)),28). occurs(object(robot,1),action(move,(0,0)),29)",
+  "model": "new_step(1,3,0,1). new_step(2,3,1,1). new_step(2,2,2,1). new_step(3,2,3,1). new_step(3,1,4,1). new_step(3,1,5,1). occurs(object(robot,1),action(move,(1,0)),0). occurs(object(robot,1),action(move,(0,-1)),1). occurs(object(robot,1),action(move,(1,0)),2). occurs(object(robot,1),action(move,(0,-1)),3). occurs(object(robot,1),action(move,(0,0)),4).",
   "sat": true,
   "merger": "EdgeApproachDiamond",
   "problemtype": "targetassignement",
   "instance": "01_no_conflict.lp",
-  "rules": 4598.0,
-  "atoms": 2659.0,
-  "grounding_time": 0.011894941329956055,
-  "cpu_time": 0.020994,
-  "total_time": 0.021094083786010742
+  "rules": 498.0,
+  "atoms": 384.0,
+  "grounding_time": 0.006441354751586914,
+  "cpu_time": 0.010658,
+  "total_time": 0.010710000991821289
 }

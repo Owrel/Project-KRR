@@ -57,6 +57,9 @@ available_node(X,Y,N) :- corridor(X,Y,N,_,_).
 % Showing section
 %translation to occurs
 #show  occurs(object(robot,N), action(move,(DX,DY)),     T) :   move(DX,DY,N,T).
+#show new_step(N,T,X,Y) : position(X,Y,N,T).
+#show goalReached(N,T) : picked(N,T).
+
 #show.
 
 

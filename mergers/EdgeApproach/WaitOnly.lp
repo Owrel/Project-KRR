@@ -45,6 +45,9 @@ new_step(X,Y,T,N) :- stay(X,Y,T,N).
 
 occurs(object(robot, N), action(move,(X'-X, Y'-Y)),T) :- new_step(X,Y,T,N),new_step(X',Y',T+1,N).
 #show occurs/3.
+#show goalReached(N,T) : picked(N,T).
+#show new_step/4.
+
 % #show picked/2.
 
 % #maximize {1,N,T: stay(X,Y,T,N), end(N,X,Y)}.
