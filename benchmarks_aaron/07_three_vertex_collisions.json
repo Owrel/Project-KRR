@@ -1,0 +1,36 @@
+{
+    "groupName": "Aaron, Anton & Louis",
+    "solverName": "merger_ps_small_final.lp+merger_ps_small_final.lp+merger_w_inc_final.lp+merger_w_inc_final.lp+merger_w_inc_final.lp+merger_w_inc_final.lp",
+    "problemType": null,
+    "objective": null,
+    "objective_cost": [
+        [
+            4,
+            15
+        ],
+        [
+            4,
+            15
+        ],
+        [
+            28,
+            1
+        ],
+        [
+            0,
+            2
+        ],
+        [],
+        []
+    ],
+    "instance": "07_three_vertex_collisions",
+    "statistics": {
+        "groundingTime": 0.023028135299682617,
+        "solvingTime": 0.0018198490142822266,
+        "total": 0.024847984313964844,
+        "atoms": 889.0,
+        "rules": 1236.0
+    },
+    "info": null,
+    "model": "init(object(node,1),value(at,(2,1))). init(object(node,2),value(at,(1,2))). init(object(node,3),value(at,(2,2))). init(object(node,4),value(at,(3,2))). init(object(node,5),value(at,(2,3))). init(object(node,6),value(at,(1,4))). init(object(node,7),value(at,(2,4))). init(object(node,8),value(at,(3,4))). init(object(node,9),value(at,(2,5))). init(object(robot,1),value(at,(1,4))). init(object(robot,2),value(at,(2,5))). init(object(robot,3),value(at,(3,4))). init(object(shelf,1),value(at,(1,2))). init(object(shelf,2),value(at,(2,1))). init(object(shelf,3),value(at,(3,2))). init(object(product,1),value(on,(1,1))). init(object(product,2),value(on,(2,1))). init(object(product,3),value(on,(3,1))). init(object(order,1),value(line,(1,1))). init(object(order,2),value(line,(2,1))). init(object(order,3),value(line,(3,1))). occurs(object(robot,3),action(move,(0,0)),0). occurs(object(robot,2),action(move,(0,0)),0). occurs(object(robot,2),action(move,(0,-1)),1). occurs(object(robot,2),action(move,(0,-1)),2). occurs(object(robot,2),action(move,(0,-1)),3). occurs(object(robot,2),action(move,(0,-1)),4). occurs(object(robot,3),action(move,(0,0)),1). occurs(object(robot,3),action(move,(-1,0)),2). occurs(object(robot,3),action(move,(0,-1)),3). occurs(object(robot,3),action(move,(0,-1)),4). occurs(object(robot,3),action(move,(1,0)),5). occurs(object(robot,1),action(move,(1,0)),0). occurs(object(robot,1),action(move,(0,-1)),1). occurs(object(robot,1),action(move,(0,-1)),2). occurs(object(robot,1),action(move,(-1,0)),3)."
+}

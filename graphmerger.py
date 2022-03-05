@@ -3,26 +3,31 @@ import os
 import time
 import json
 
+
+import parser
+
 # TODO:
 # compute difference metrics
 # compute maxtime constant base
 
 
+
+
+
+def computemerger(instance, call):
+    ctl,s  = call(instance)
+
+
+
+
 class GraphMerger:
     def __init__(self,
                  spf='pathfinding/path.lp',
-                 mergers=[
-                     'mergers/EdgeApproach/Diamond.lp',
-                     'mergers/EdgeApproach/WaitOnly.lp',
-                     'mergers/NodeApproach/Corridor.lp',
-                     'mergers/NodeApproach/Diamond.lp',
-                     'mergers/NodeApproach/DiamondCorridor.lp',
-                     'mergers/NodeApproach/WaitOnly.lp'
-                 ],
+                 merger= 'mergers/NodeApproach/DiamondCorridor.lp',
                  reseting=True
                  ):
         self.spf = spf
-        self.mergers = mergers
+        self.merger = merger
         self.reseting = False
 
     def pos_metric(self, instancepath, result):
@@ -185,82 +190,27 @@ class GraphMerger:
                 print('PATHFINDING UNSATISFIABLE')
 
         print('Merging')
-        for merger in self.mergers:
+        print(f'Merger : {self.merger}')
+        merger = self.merger
+        f=open(merger, "r")
+        merger_program=f.read()
 
-            # Building result object
-            ret={
-                'model': None,
-                'sat': None,
-                'merger': self.get_merger_name(merger),
-                'problemtype': 'targetassignement',
-                'instance': self.get_merger_name(instance) + '.lp'
-            }
+        ctl=clingo.Control(['-c maxtime=50'])
+        ctl.load(merger)
+        ctl.load(instance + '.path')
 
-            print(f'Merger : {merger}')
-            f=open(merger, "r")
-            merger_program=f.read()
+        start=time.time()
+        ctl.ground([("base", [])])
+        grounding_time=time.time()-start
 
-            ctl=clingo.Control(['-c maxtime=6'])
-            ctl.load(merger)
-            ctl.load(instance + '.path')
+        result=[]
+        ctl.solve(on_model=lambda m: result.append((("{}".format(m)))))
 
-            start=time.time()
-            ctl.ground([("base", [])])
-            grounding_time=time.time()-start
+        if result:
+            result = result[-1].replace(' ', '. ') + '.'
 
-            result=[]
-            ctl.solve(on_model=lambda m: result.append((("{}".format(m)))))
+        metrics = [self.pos_metric(instance+'.path', result),self.time_metric(instance+'.path', result)]
 
-            total_time=ctl.statistics['summary']['times']['total']
-            nb_atoms=ctl.statistics['problem']['lp']['atoms']
-            nb_rules=ctl.statistics['problem']['lp']['rules']
+        return ctl,grounding_time,result,metrics
 
-
-            ret['rules']=nb_rules
-            ret['atoms']=nb_atoms
-            ret['grounding_time']=grounding_time
-            ret['cpu_time']=ctl.statistics['summary']['times']['cpu']
-            ret['total_time']=total_time
-
-            print('####### Result #######')
-            print(f'\tSolved in {str(total_time)} sec.')
-            print(f'\tAtoms : {str(nb_atoms)}')
-            print(f'\tRules : {str(nb_rules)}')
-
-            print(ret)
-            if result:
-                # print(result[-1])
-                ret['model']=result[-1].replace(' ', '. ') + '.'
-                out=result[-1].replace(' ', '. ')
-                out += '.'
-                f=open("instances/lastout.lp", "w")
-                f.write(out)
-                f.close()
-                print('+ SATISFIABLE')
-                ret['sat']=True
-            else:
-                print('- UNSATISFIABLE')
-                ret['sat']=False
-            print()
-
-
-            # dumpings data
-            f=open(
-                f'{output_directory}{self.get_merger_name(instance)}{self.get_merger_name(merger)}.json', "w")
-            f.write(json.dumps(ret, indent=2))
-            f.close()
-            if ret['sat']:
-                print(f"Pos difference  : {self.pos_metric(instance+'.path', ret['model'])}")
-                print(f"Time difference : {self.time_metric(instance+'.path', ret['model'])}")
-
-
-
-
-
-
-
-
-gm=GraphMerger()
-gm('instances/instance05.lp')
-
-# graphmerger('instances/instance01.lp')
+            

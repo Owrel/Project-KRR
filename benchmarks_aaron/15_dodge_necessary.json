@@ -1,0 +1,34 @@
+{
+    "groupName": "Aaron, Anton & Louis",
+    "solverName": "merger_ps_small_final.lp+merger_ps_small_final.lp+merger_ps_small_final.lp+merger_w_inc_final.lp+merger_w_inc_final.lp",
+    "problemType": null,
+    "objective": null,
+    "objective_cost": [
+        [
+            1,
+            4,
+            0,
+            0
+        ],
+        [
+            1,
+            4
+        ],
+        [
+            1,
+            4
+        ],
+        [],
+        []
+    ],
+    "instance": "15_dodge_necessary",
+    "statistics": {
+        "groundingTime": 0.018192291259765625,
+        "solvingTime": 0.0008411407470703125,
+        "total": 0.019033432006835938,
+        "atoms": 222.0,
+        "rules": 250.0
+    },
+    "info": null,
+    "model": "init(object(node,1),value(at,(2,1))). init(object(node,2),value(at,(4,1))). init(object(node,3),value(at,(1,2))). init(object(node,4),value(at,(2,2))). init(object(node,5),value(at,(3,2))). init(object(node,6),value(at,(4,2))). init(object(robot,2),value(at,(2,2))). init(object(robot,1),value(at,(4,2))). init(object(shelf,2),value(at,(4,1))). init(object(shelf,1),value(at,(1,2))). init(object(product,1),value(on,(1,1))). init(object(product,2),value(on,(2,1))). init(object(order,1),value(line,(1,1))). init(object(order,2),value(line,(2,1))). occurs(object(robot,1),action(move,(0,-1)),0). occurs(object(robot,2),action(move,(-1,0)),0)."
+}

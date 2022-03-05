@@ -1,0 +1,26 @@
+{
+    "groupName": "Allan",
+    "solverName": "planmergeersatz.lp+planmerge7.lp+verandern4.lp",
+    "problemType": null,
+    "objective": null,
+    "objective_cost": [
+        [
+            1,
+            2
+        ],
+        [
+            1
+        ],
+        []
+    ],
+    "instance": "15_dodge_necessary.lp",
+    "statistics": {
+        "groundingTime": 0.01746225357055664,
+        "solvingTime": 0.0007717609405517578,
+        "total": 0.0182340145111084,
+        "atoms": 297.0,
+        "rules": 322.0
+    },
+    "info": null,
+    "model": "init(object(node,1),value(at,(2,1))). init(object(node,2),value(at,(4,1))). init(object(node,3),value(at,(1,2))). init(object(node,4),value(at,(2,2))). init(object(node,5),value(at,(3,2))). init(object(node,6),value(at,(4,2))). init(object(robot,2),value(at,(2,2))). init(object(robot,1),value(at,(4,2))). init(object(shelf,2),value(at,(4,1))). init(object(shelf,1),value(at,(1,2))). init(object(product,1),value(on,(1,1))). init(object(product,2),value(on,(2,1))). init(object(order,1),value(line,(1,1))). init(object(order,2),value(line,(2,1))).  occurs(object(robot,1),action(move,(0,-1)),0). occurs(object(robot,2),action(move,(-1,0)),0). "
+}
