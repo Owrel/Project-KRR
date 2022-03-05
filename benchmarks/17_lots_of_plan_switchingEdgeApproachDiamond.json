@@ -1,0 +1,12 @@
+{
+  "model": null,
+  "sat": false,
+  "merger": "EdgeApproachDiamond",
+  "problemtype": "targetassignement",
+  "instance": "17_lots_of_plan_switching.lp",
+  "rules": 117535.0,
+  "atoms": 41565.0,
+  "grounding_time": 0.260847806930542,
+  "cpu_time": 6.114851000000001,
+  "total_time": 6.177016973495483
+}

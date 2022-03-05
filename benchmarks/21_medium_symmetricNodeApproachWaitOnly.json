@@ -1,0 +1,12 @@
+{
+  "model": null,
+  "sat": false,
+  "merger": "NodeApproachWaitOnly",
+  "problemtype": "targetassignement",
+  "instance": "21_medium_symmetric.lp",
+  "rules": 37871.0,
+  "atoms": 11166.0,
+  "grounding_time": 0.16159558296203613,
+  "cpu_time": 0.3421809999999965,
+  "total_time": 0.3426480293273926
+}

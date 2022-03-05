@@ -1,0 +1,12 @@
+{
+  "model": null,
+  "sat": false,
+  "merger": "NodeApproachDiamond",
+  "problemtype": "targetassignement",
+  "instance": "15_dodge_necessary.lp",
+  "rules": 4870.0,
+  "atoms": 1481.0,
+  "grounding_time": 0.013620376586914062,
+  "cpu_time": 0.05982800000000005,
+  "total_time": 0.0600438117980957
+}

@@ -1,0 +1,12 @@
+{
+  "model": null,
+  "sat": false,
+  "merger": "NodeApproachWaitOnly",
+  "problemtype": "targetassignement",
+  "instance": "instance08.lp",
+  "rules": 190163.0,
+  "atoms": 6638.0,
+  "grounding_time": 0.3551299571990967,
+  "cpu_time": 0.5262649999999987,
+  "total_time": 0.5269160270690918
+}

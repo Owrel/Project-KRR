@@ -1,0 +1,12 @@
+{
+  "model": "occurs(object(robot,1),action(move,(1,0)),1). occurs(object(robot,1),action(move,(1,0)),2). occurs(object(robot,1),action(move,(0,-1)),3). occurs(object(robot,1),action(move,(0,-1)),4). occurs(object(robot,1),action(move,(0,-1)),5). occurs(object(robot,1),action(move,(-1,0)),6). occurs(object(robot,1),action(move,(-1,0)),7). occurs(object(robot,1),action(move,(1,0)),8). occurs(object(robot,1),action(move,(-1,0)),9). occurs(object(robot,2),action(move,(-1,0)),1). occurs(object(robot,2),action(move,(0,-1)),2). occurs(object(robot,2),action(move,(0,-1)),3). occurs(object(robot,2),action(move,(0,-1)),4). occurs(object(robot,2),action(move,(1,0)),5). occurs(object(robot,2),action(move,(-1,0)),6)",
+  "sat": true,
+  "merger": "NodeApproachCorridor",
+  "problemtype": "targetassignement",
+  "instance": "12_shelf_in_the_way.lp",
+  "rules": 4467.0,
+  "atoms": 1275.0,
+  "grounding_time": 0.014981269836425781,
+  "cpu_time": 0.022901000000000005,
+  "total_time": 0.022979021072387695
+}

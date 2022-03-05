@@ -1,0 +1,12 @@
+{
+  "model": null,
+  "sat": false,
+  "merger": "NodeApproachDiamond",
+  "problemtype": "targetassignement",
+  "instance": "13_time_performance.lp",
+  "rules": 1531133.0,
+  "atoms": 18508.0,
+  "grounding_time": 2.4809415340423584,
+  "cpu_time": 3.957516000000002,
+  "total_time": 3.9622910022735596
+}

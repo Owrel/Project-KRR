@@ -1,0 +1,12 @@
+{
+  "model": null,
+  "sat": false,
+  "merger": "EdgeApproachWaitOnly",
+  "problemtype": "targetassignement",
+  "instance": "15_dodge_necessary.lp",
+  "rules": 6771.0,
+  "atoms": 2842.0,
+  "grounding_time": 0.01758289337158203,
+  "cpu_time": 0.053280999999999995,
+  "total_time": 0.05361294746398926
+}

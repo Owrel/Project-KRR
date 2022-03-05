@@ -9,8 +9,6 @@ import time
 
 
 
-
-
 def compute_initial_path(instance, pathfinder):
     #get atoms
     ctl = clingo.Control()
@@ -52,25 +50,12 @@ def compute_initial_path(instance, pathfinder):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 #Reseting path
 reseting = False
 
 # Getting instances
 instances = ['instance08']
-merger = 'EdgeApproach/TargetAssignmentDiamond.lp'
+merger = 'NodeApproach/TargetAssignmentDiamond.lp'
 pathfinder = 'path.lp'
 
 
@@ -84,71 +69,8 @@ path_mergers = 'mergers/'
 file_extensions = '.lp'
 
 
-for instance in instances:
-    print('Instance ' + instance)
-    f = open(path_instances+instance+file_extensions, "r")
-    program = f.read()
-
-    print('Computing simple path finding...')
-
-    if os.path.isfile(path_instances+instance+".path") and not reseting:
-        print('Reading from old computed path.')
-        f = open(path_instances+instance+".path", "r")
-        path = f.read()
-        pathfinding_time = "Imported"
-        # path = ''
-    else:
-        path = ''
-        ret = compute_initial_path(path_instances+instance+file_extensions, pathfinding+pathfinder)
-        if ret :
-            for r in ret:
-                r.sort()
-                for s in r:
-
-                    path += s +'.\n'
-                path += '\n' 
-        
-            f = open(path_instances+instance+".path", "w")
-            f.write(path)
-            f.close()
-        else:
-            print('PATHFINDING UNSATISFIABLE')
-            break
-
-    print('Merging...')
-
-    f = open(path_instances+instance+file_extensions, "r")
-    instance_program = f.read()
-
-    f = open(path_mergers+merger, "r")
-    merger_program = f.read()
-
-    ctl = clingo.Control()
-    ctl.add('base', [], instance_program)
-    ctl.add('base', [], merger_program)
-    ctl.add('base', [], path)
-    start = time.time()
-    ctl.ground([("base", [])])
-    print(f'Grounding done in {time.time()-start}')
-
-    result = []
-    ctl.solve(on_model=lambda m: result.append((("{}".format(m)))))
-
-    if result:
-        print(result[-1])
-        out = result[-1].replace(' ', '. ')
-        out += '.'
-        f = open("instances/lastout.lp", "w")
-        f.write(out)
-        f.close()
-    else:
-        print('UNSATISFIABLE')
-    # print(json.dumps(ctl.statistics,indent=4))
-    print('####### Additional informations #######')
-    print("Solved in " +
-          str(ctl.statistics['summary']['times']['total']) + ' sec.')
-    print('Atoms : ' + str(ctl.statistics['problem']['lp']['atoms']))
-    print('Rules : ' + str(ctl.statistics['problem']['lp']['rules']))
+# for instance in instances:
+    
     # print('Pathfinding : ' + pathfinding_time)
 
     # print(json.dumps(ctl.statistics, indent=4))

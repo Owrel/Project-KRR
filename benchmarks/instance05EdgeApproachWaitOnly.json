@@ -1,0 +1,12 @@
+{
+  "model": null,
+  "sat": false,
+  "merger": "EdgeApproachWaitOnly",
+  "problemtype": "targetassignement",
+  "instance": "instance05.lp",
+  "rules": 738.0,
+  "atoms": 506.0,
+  "grounding_time": 0.00885462760925293,
+  "cpu_time": 0.018095999999999973,
+  "total_time": 0.018583059310913086
+}

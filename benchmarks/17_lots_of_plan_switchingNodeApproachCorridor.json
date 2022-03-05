@@ -1,0 +1,12 @@
+{
+  "model": null,
+  "sat": false,
+  "merger": "NodeApproachCorridor",
+  "problemtype": "targetassignement",
+  "instance": "17_lots_of_plan_switching.lp",
+  "rules": 54623.0,
+  "atoms": 8494.0,
+  "grounding_time": 0.1399827003479004,
+  "cpu_time": 0.42632200000000076,
+  "total_time": 0.433178186416626
+}
