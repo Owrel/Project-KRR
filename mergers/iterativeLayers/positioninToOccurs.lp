@@ -1,0 +1,1 @@
+occurs(object(robot,R), action(move, (XD2-XD1,YD2-YD1)),T) :- positionin(R,(XD1, YD1), T-1), positionin(R,(XD2, YD2), T).

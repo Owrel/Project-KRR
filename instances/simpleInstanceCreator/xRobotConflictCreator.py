@@ -31,4 +31,4 @@ def instanceFromNumberOfRobots(numRobots):
         for downMove in range(downMoves):
             instance += "occurs(object(robot,"+str(robot)+"), action(move, (0,1)),"+str(leftMoves+downMove+1)+")."
     return instance
-print(instanceFromNumberOfRobots(5))
+print(instanceFromNumberOfRobots(50))
