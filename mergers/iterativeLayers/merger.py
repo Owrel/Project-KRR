@@ -136,7 +136,7 @@ class Iterations:
                     print(model_string)
                     self.logLayer(model_string, "Model", benchmark_info)
                 self.benchmark_info = benchmark_info
-                self.models.append(model_string)
+                self.models.append(self.model_to_occurs(model_string))
         return do_something
 
     def set_positions(self, positions):
@@ -185,7 +185,18 @@ class Iterations:
         ctl.add("base", [], atoms + self.positionin_to_occurs)
         ctl.ground([("base", [])])
         ctl.solve(yield_=False, on_model=self.writeToFile(layer, benchmark_info))
-
+    def model_to_occurs(self, model):
+        ctl = clingo.Control()
+        ctl.add("base", [], model + self.positionin_to_occurs)
+        ctl.ground([("base", [])])
+        modelcontainer = {}
+        def on_model(modelcontainer):
+            def do_something(m):
+                modelcontainer["model"] = m.__str__()
+                return False
+            return do_something
+        ctl.solve(yield_=False, on_model=on_model(modelcontainer))
+        return filter_atoms(["occurs"],modelcontainer["model"])
     def get_total_solving_time(self, benchmark_info, found_at):
         i = 1
         total_time = 0

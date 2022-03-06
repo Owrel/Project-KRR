@@ -4,6 +4,9 @@ from pathlib import Path
 import os
 import multiprocessing
 import time
+import sys
+# TODO: Benchmark output auf Aureliens output anpassen
+# TODO: Benchmark ordner und Dateien auf Aureliens anpassen
 class ProcessEnlosed:
     def start_merging(self, iteration, queue):
         iteration.start_merging()
@@ -14,7 +17,17 @@ class ProcessEnlosed:
         if(hasattr(iteration, "benchmark_info")):
             queue.put(iteration.benchmark_info)
 
-
+def count_atoms(atoms):
+    bracketdepth = 0
+    count = 0
+    for c in atoms:
+        if(c == "("):
+            bracketdepth +=1
+        if(c==")"):
+            bracketdepth-=1
+            if(bracketdepth == 0):
+                count +=1
+    return count
 def remove_comments_and_newlines(lp_file):
     reading_comment = False
     out_lp = ""
@@ -28,8 +41,23 @@ def remove_comments_and_newlines(lp_file):
         if(not reading_comment):
             out_lp += char
     return out_lp
+def benchmark_to_json(benchmark, model,instance):
+    dict = {
+        "groupName": "Aurelien & Florian",
+        "solverName": "Layer Approach with Plan merging",
+        "instance": instance,
+        "statistics": {
+            "groundingTime": sum(benchmark["grounding"]),
+            "solvingTime": sum(benchmark["solving_times1"]),
+            "total": sum(benchmark["solving_times1"])+sum(benchmark["grounding"]),
+            "atoms": count_atoms(model),
+        },
+        "model": model
+    }
+    return dict
+
 if __name__ =="__main__":
-    max_total_time_second = 600
+    max_total_time_second = 3000
     for folder in [x[0] for x in os.walk("checkable_examples")]:
         print("folder: ",folder)
         folder_wo_slashes = folder.replace("\\", "")
@@ -46,31 +74,40 @@ if __name__ =="__main__":
         queue = multiprocessing.Queue()
         proc = multiprocessing.Process(target = ProcessEnlosed().start_merging, args=(iteration, queue,))
         proc.start()
+        queuedata = []
         while proc.is_alive() and (time.time()-timestart)<max_total_time_second:
-            #print("time passed: "+str(time.time()-timestart)+" time left: "+str(max_total_time_second-(time.time()-timestart)))
+            if(len(queuedata)>=3):
+                if(not queuedata[1]):
+                    break
+                if(len(queuedata)==4):
+                    break
+            queuedata.append(queue.get())
             pass
-        #print("left while loop")
         if(time.time()-timestart > max_total_time_second):
             print("max time reached")
             proc.terminate()
             continue
         else:
-            hasmodel = queue.get()
-            hasbenchmark = queue.get()
+            hasmodel = queuedata[0]
+            hasbenchmark =queuedata[1]
             if(not hasmodel):
                 continue
 
-            model = queue.get()
+            model = queuedata[2]
             if(hasbenchmark):
-                benchmark = queue.get()
-            proc.join()
+                benchmark = queuedata[3]
+                try:
+                    benchmark["grounding"] = benchmark["grounding"]
+                except AttributeError as err:
+                    hasbenchmark = False
+            proc.terminate()
 
-        resultfolder = "working_examples/"+folder
+        resultfolder = "working_examples/"+folder.replace("checkable_examples\\","")
         Path(resultfolder).mkdir(parents=True, exist_ok=True)
         if(hasmodel != None):
             with open(resultfolder+"/model.lp", 'w') as file:
                 file.write(model)
-            if(hasbenchmark != None):
+            if(hasbenchmark):
                 with open(resultfolder+"/statistics.lp", 'w') as file:
-                    file.write(json.dumps(benchmark))
+                    file.write(json.dumps(benchmark_to_json(benchmark, model, folder.replace("checkable_examples\\","")), indent=4))
         # check whether merging worked
