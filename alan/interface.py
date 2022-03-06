@@ -19,8 +19,8 @@ import glob
 
 
 if __name__ == '__main__':
-	bm = '/home/owrel/Documents/MASTER_2/Project-KRR/aron/benchmarks/01_no_conflict.lp'
-	save_dir = '/home/owrel/Documents/MASTER_2/Project-KRR/benchmarks/'
+	# bm = '/home/owrel/Documents/MASTER_2/Project-KRR/aron/benchmarks/01_no_conflict.lp'
+	save_dir = '/home/owrel/Documents/MASTER_2/Project-KRR/benchmarks_alan/'
 	# merge(bm, save_dir)
         
 	
@@ -28,7 +28,7 @@ if __name__ == '__main__':
 	import multiprocessing
 	import time 
 
-	files = glob.glob('/home/owrel/Documents/MASTER_2/Project-KRR/aron/benchmarks/*.lp')
+	files = glob.glob('/home/owrel/Documents/MASTER_2/Project-KRR/common_instances/*.lp')
 	files.sort()
 	print(files)
 	# print()
@@ -39,7 +39,9 @@ if __name__ == '__main__':
 		# print(instance == bm)
 		t = multiprocessing.Process(target=merge, args=(instance,save_dir,))
 		t.start()
-		time.sleep(180)
+		for i in range(0,12):
+			if t.is_alive():
+				time.sleep(5)
 		if t.is_alive():
 			t.terminate()
 			print('Time out')

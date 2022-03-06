@@ -21,9 +21,9 @@
     ],
     "instance": "05_two_vertex_collisions_in_a_row",
     "statistics": {
-        "groundingTime": 0.015726804733276367,
-        "solvingTime": 0.0009770393371582031,
-        "total": 0.01670384407043457,
+        "groundingTime": 0.014986991882324219,
+        "solvingTime": 0.0011167526245117188,
+        "total": 0.016103744506835938,
         "atoms": 390.0,
         "rules": 420.0
     },

@@ -21,9 +21,9 @@
     ],
     "instance": "06_two_simultaneous_vertex_collisions",
     "statistics": {
-        "groundingTime": 0.017688274383544922,
-        "solvingTime": 0.0010309219360351562,
-        "total": 0.018719196319580078,
+        "groundingTime": 0.01746201515197754,
+        "solvingTime": 0.0014238357543945312,
+        "total": 0.01888585090637207,
         "atoms": 484.0,
         "rules": 512.0
     },

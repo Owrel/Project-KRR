@@ -10,12 +10,13 @@ def sat(model):
 def computemerger(instance, call):
     ctl,gt,model,additionnal_info = call(instance)
 
+    instance_name = call.get_merger_name(instance)
 
     ret = {
         "groupName" : 'Aurélien & Florian',
         "solverName" : "Target Assignment - Node Approach diamond + corridor",
         "objective" : "timespan",
-        "instance" : instance,
+        "instance" : instance_name,
         "ret" : sat(model),
         "statistics" : {
             "groudingTime" : gt,
@@ -28,7 +29,7 @@ def computemerger(instance, call):
         'additionnal' : additionnal_info
     }
 
-    f = open(instance + ".json", "a")
+    f = open('benchmarks/'+ instance_name + ".json", "w")
     f.write(json.dumps(ret,indent=4))
     f.close()
 
@@ -37,10 +38,6 @@ import multiprocessing
 import time 
 
 gm = graphmerger.GraphMerger(merger='mergers/NodeApproach/DiamondCorridor.lp', reseting=False)
-
-
-
-
 files = glob.glob('/home/owrel/Documents/MASTER_2/Project-KRR/common_instances/*.lp')
 files.sort()
 print(files)
@@ -52,7 +49,10 @@ for instance in files:
     # print(instance == bm)
     t = multiprocessing.Process(target=computemerger, args=(instance,gm,))
     t.start()
-    time.sleep(360)
+    for i in range(0,12):
+        if t.is_alive():
+            time.sleep(5)
+
     if t.is_alive():
         t.terminate()
         print('Time out')
