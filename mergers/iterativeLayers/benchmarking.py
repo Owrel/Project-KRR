@@ -56,7 +56,7 @@ def benchmark_to_json(benchmark, model,instance, time):
     }
 
 if __name__ =="__main__":
-    max_total_time_second = 30
+    max_total_time_second = 1800
     for folder in [x[0] for x in os.walk("checkable_examples")]:
         print("folder: ",folder)
         folder_wo_slashes = folder.replace("\\", "")
