@@ -37,8 +37,8 @@ import glob
 import multiprocessing
 import time 
 
-gm = graphmerger.GraphMerger(merger='mergers/NodeApproach/DiamondCorridor.lp', reseting=False)
-files = glob.glob('/home/owrel/Documents/MASTER_2/Project-KRR/common_instances/*.lp')
+gm = graphmerger.GraphMerger(merger='mergers/NodeApproach/DiamondCorridor.lp', reseting=True)
+files = glob.glob('/home/owrel/Documents/MASTER_2/Project-KRR/instances/*.lp')
 files.sort()
 print(files)
 # print()
@@ -49,9 +49,9 @@ for instance in files:
     # print(instance == bm)
     t = multiprocessing.Process(target=computemerger, args=(instance,gm,))
     t.start()
-    for i in range(0,12):
+    for i in range(0,360):
         if t.is_alive():
-            time.sleep(5)
+            time.sleep(1)
 
     if t.is_alive():
         t.terminate()
