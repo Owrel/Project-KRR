@@ -15,9 +15,9 @@
     ],
     "instance": "03_vertex_collision.lp",
     "statistics": {
-        "groundingTime": 0.05346512794494629,
-        "solvingTime": 0.0018048286437988281,
-        "total": 0.05526995658874512,
+        "groundingTime": 0.04233694076538086,
+        "solvingTime": 0.001493215560913086,
+        "total": 0.043830156326293945,
         "atoms": 2450.0,
         "rules": 4515.0
     },

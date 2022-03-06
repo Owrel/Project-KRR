@@ -15,9 +15,9 @@
     ],
     "instance": "01_no_conflict.lp",
     "statistics": {
-        "groundingTime": 0.021739959716796875,
-        "solvingTime": 0.0017101764678955078,
-        "total": 0.023450136184692383,
+        "groundingTime": 0.014364004135131836,
+        "solvingTime": 0.0007898807525634766,
+        "total": 0.015153884887695312,
         "atoms": 184.0,
         "rules": 186.0
     },

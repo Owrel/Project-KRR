@@ -15,9 +15,9 @@
     ],
     "instance": "02_edge_collision.lp",
     "statistics": {
-        "groundingTime": 0.02958226203918457,
-        "solvingTime": 0.0017366409301757812,
-        "total": 0.03131890296936035,
+        "groundingTime": 0.017203330993652344,
+        "solvingTime": 0.0012466907501220703,
+        "total": 0.018450021743774414,
         "atoms": 458.0,
         "rules": 487.0
     },

@@ -23,9 +23,9 @@
     ],
     "instance": "02_edge_collision",
     "statistics": {
-        "groundingTime": 0.017087221145629883,
-        "solvingTime": 0.0013680458068847656,
-        "total": 0.01845526695251465,
+        "groundingTime": 0.01620030403137207,
+        "solvingTime": 0.0009620189666748047,
+        "total": 0.017162322998046875,
         "atoms": 421.0,
         "rules": 462.0
     },

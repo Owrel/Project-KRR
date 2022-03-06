@@ -1,0 +1,19 @@
+{
+    "groupName": "Aur\u00e9lien & Florian",
+    "solverName": "Target Assignment - Node Approach diamond + corridor",
+    "objective": "timespan",
+    "instance": "15_dodge_necessary",
+    "ret": true,
+    "statistics": {
+        "groudingTime": 0.023836612701416016,
+        "solvingtime": 0.033802,
+        "total": 0.057638612701416014,
+        "atoms": 1945.0,
+        "rules": 8512.0
+    },
+    "model": "goalReached(1,5). goalReached(1,6). goalReached(1,7). goalReached(1,8). goalReached(1,9). goalReached(1,10). goalReached(1,11). goalReached(1,12). goalReached(1,13). goalReached(1,14). goalReached(1,15). goalReached(1,16). goalReached(1,17). goalReached(1,18). goalReached(1,19). goalReached(1,20). goalReached(1,21). goalReached(1,22). goalReached(1,23). goalReached(1,24). goalReached(1,25). goalReached(1,26). goalReached(1,27). goalReached(1,28). goalReached(1,29). goalReached(1,30). goalReached(1,31). goalReached(1,32). goalReached(1,33). goalReached(1,34). goalReached(1,35). goalReached(1,36). goalReached(1,37). goalReached(1,38). goalReached(1,39). goalReached(1,40). goalReached(1,41). goalReached(1,42). goalReached(1,43). goalReached(1,44). goalReached(1,45). goalReached(1,46). goalReached(1,47). goalReached(1,48). goalReached(1,49). goalReached(1,50). goalReached(2,50). new_step(1,0,4,2). new_step(2,0,2,2). new_step(2,1,2,2). new_step(1,1,3,2). new_step(2,2,2,1). new_step(1,2,2,2). new_step(2,3,2,2). new_step(1,3,1,2). new_step(1,4,1,2). new_step(2,4,3,2). new_step(2,5,4,2). new_step(1,5,1,2). new_step(1,6,1,2). new_step(2,6,4,1). new_step(2,7,4,1). new_step(1,7,1,2). new_step(1,8,1,2). new_step(2,8,4,1). new_step(2,9,4,1). new_step(1,9,1,2). new_step(1,10,1,2). new_step(2,10,4,1). new_step(2,11,4,1). new_step(1,11,1,2). new_step(1,12,1,2). new_step(2,12,4,1). new_step(2,13,4,1). new_step(1,13,1,2). new_step(1,14,1,2). new_step(2,14,4,1). new_step(2,15,4,1). new_step(1,15,1,2). new_step(1,16,1,2). new_step(2,16,4,1). new_step(2,17,4,1). new_step(1,17,1,2). new_step(1,18,1,2). new_step(2,18,4,1). new_step(2,19,4,1). new_step(1,19,1,2). new_step(1,20,1,2). new_step(2,20,4,1). new_step(2,21,4,1). new_step(1,21,1,2). new_step(1,22,1,2). new_step(2,22,4,1). new_step(2,23,4,1). new_step(1,23,1,2). new_step(1,24,1,2). new_step(2,24,4,1). new_step(2,25,4,1). new_step(1,25,1,2). new_step(1,26,1,2). new_step(2,26,4,1). new_step(2,27,4,1). new_step(1,27,1,2). new_step(1,28,1,2). new_step(2,28,4,1). new_step(2,29,4,1). new_step(1,29,1,2). new_step(1,30,1,2). new_step(2,30,4,1). new_step(2,31,4,1). new_step(1,31,1,2). new_step(1,32,1,2). new_step(2,32,4,1). new_step(2,33,4,1). new_step(1,33,1,2). new_step(1,34,1,2). new_step(2,34,4,1). new_step(2,35,4,1). new_step(1,35,1,2). new_step(1,36,1,2). new_step(2,36,4,1). new_step(2,37,4,1). new_step(1,37,1,2). new_step(1,38,1,2). new_step(2,38,4,1). new_step(2,39,4,1). new_step(1,39,1,2). new_step(1,40,1,2). new_step(2,40,4,1). new_step(2,41,4,1). new_step(1,41,1,2). new_step(1,42,1,2). new_step(2,42,4,1). new_step(2,43,4,1). new_step(1,43,1,2). new_step(1,44,1,2). new_step(2,44,4,1). new_step(2,45,4,1). new_step(1,45,1,2). new_step(1,46,1,2). new_step(2,46,4,1). new_step(2,47,4,1). new_step(1,47,1,2). new_step(1,48,1,2). new_step(2,48,4,1). new_step(2,49,4,1). new_step(1,49,1,2). new_step(1,50,1,2). new_step(2,50,4,1). occurs(object(robot,1),action(move,(-1,0)),1). occurs(object(robot,1),action(move,(-1,0)),2). occurs(object(robot,1),action(move,(-1,0)),3). occurs(object(robot,2),action(move,(0,-1)),2). occurs(object(robot,2),action(move,(0,1)),3). occurs(object(robot,2),action(move,(1,0)),4). occurs(object(robot,2),action(move,(1,0)),5). occurs(object(robot,2),action(move,(0,-1)),6).",
+    "additionnal": [
+        1,
+        94
+    ]
+}

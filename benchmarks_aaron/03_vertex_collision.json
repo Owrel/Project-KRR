@@ -21,9 +21,9 @@
     ],
     "instance": "03_vertex_collision",
     "statistics": {
-        "groundingTime": 0.022065162658691406,
-        "solvingTime": 0.0012030601501464844,
-        "total": 0.02326822280883789,
+        "groundingTime": 0.020051240921020508,
+        "solvingTime": 0.0010089874267578125,
+        "total": 0.02106022834777832,
         "atoms": 352.0,
         "rules": 376.0
     },

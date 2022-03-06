@@ -17,9 +17,9 @@
     ],
     "instance": "01_no_conflict",
     "statistics": {
-        "groundingTime": 0.012376070022583008,
-        "solvingTime": 0.0006382465362548828,
-        "total": 0.01301431655883789,
+        "groundingTime": 0.009978055953979492,
+        "solvingTime": 0.00038886070251464844,
+        "total": 0.01036691665649414,
         "atoms": 108.0,
         "rules": 110.0
     },
