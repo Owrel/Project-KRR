@@ -41,23 +41,22 @@ def remove_comments_and_newlines(lp_file):
         if(not reading_comment):
             out_lp += char
     return out_lp
-def benchmark_to_json(benchmark, model,instance):
-    dict = {
+def benchmark_to_json(benchmark, model,instance, time):
+    return {
         "groupName": "Aurelien & Florian",
         "solverName": "Layer Approach with Plan merging",
         "instance": instance,
         "statistics": {
             "groundingTime": sum(benchmark["grounding"]),
             "solvingTime": sum(benchmark["solving_times1"]),
-            "total": sum(benchmark["solving_times1"])+sum(benchmark["grounding"]),
+            "total": time,
             "atoms": count_atoms(model),
         },
         "model": model
     }
-    return dict
 
 if __name__ =="__main__":
-    max_total_time_second = 3000
+    max_total_time_second = 30
     for folder in [x[0] for x in os.walk("checkable_examples")]:
         print("folder: ",folder)
         folder_wo_slashes = folder.replace("\\", "")
@@ -76,18 +75,21 @@ if __name__ =="__main__":
         proc.start()
         queuedata = []
         while proc.is_alive() and (time.time()-timestart)<max_total_time_second:
-            if(len(queuedata)>=3):
+            if( not queue.empty()):
+                queuedata.append(queue.get())
+            if(len(queuedata)>=2):
+                if(not queuedata[0]):
+                    break
                 if(not queuedata[1]):
                     break
                 if(len(queuedata)==4):
                     break
-            queuedata.append(queue.get())
-            pass
         if(time.time()-timestart > max_total_time_second):
             print("max time reached")
             proc.terminate()
             continue
         else:
+            timetaken = time.time()-timestart
             hasmodel = queuedata[0]
             hasbenchmark =queuedata[1]
             if(not hasmodel):
@@ -109,5 +111,5 @@ if __name__ =="__main__":
                 file.write(model)
             if(hasbenchmark):
                 with open(resultfolder+"/statistics.lp", 'w') as file:
-                    file.write(json.dumps(benchmark_to_json(benchmark, model, folder.replace("checkable_examples\\","")), indent=4))
+                    file.write(json.dumps(benchmark_to_json(benchmark, model, folder.replace("checkable_examples\\",""), timetaken), indent=4))
         # check whether merging worked

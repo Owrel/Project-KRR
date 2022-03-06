@@ -136,7 +136,7 @@ class Iterations:
                     print(model_string)
                     self.logLayer(model_string, "Model", benchmark_info)
                 self.benchmark_info = benchmark_info
-                self.models.append(self.model_to_occurs(model_string))
+                self.models.append(self.model_to_occurs(model_string).replace(" ", "."))
         return do_something
 
     def set_positions(self, positions):
