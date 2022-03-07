@@ -14,7 +14,6 @@ init(N,X,Y) :- init(object(robot,N), value(at,(X,Y))).
 
 % parameters
 time(1..maxtime).
-diamond_size(2).
 
 
 available_edge(X,Y,X',Y',N) :- path(X,Y,X',Y',N).
@@ -28,12 +27,11 @@ conflict(N',N,T)    :- step(N,_,X,Y),  end(N',X,Y), N!=N', step(N',T,X,Y).
 
 
 
+diamond_size(2).
 diamond_require(N,X,Y) :- conflict(N,N',T), step(N,T,X,Y).
 diamond_require(N,X,Y) :- end(N,X,Y).
 {diamond(X,Y,X',Y',N,1)}:- diamond_require(N,X,Y), edge(X,Y,X',Y'), (X',Y')!=(X,Y), diamond_size(MS), MS>=1.
 {diamond(X,Y,X',Y',N,S+1)} :- diamond(_,_,X,Y,N,S), edge(X,Y,X',Y'), diamond_size(MS), (X',Y')!=(X,Y), S<MS.
-
-
 diamond(X,Y,X',Y',N) :- diamond(X,Y,X',Y',N,_).
 diamond(X',Y',X,Y,N) :- diamond(X,Y,X',Y',N).
 

@@ -192,25 +192,33 @@ class GraphMerger:
         print('Merging')
         print(f'Merger : {self.merger}')
         merger = self.merger
-        f=open(merger, "r")
-        merger_program=f.read()
+        maxstep = 0
+        for l in path.split('\n'):
+            if 'old_goalReached' in l :
+                if int(l[l.index(',')+1:l.index(')')]) > maxstep:
+                    maxstep = int(l[l.index(',')+1:l.index(')')])
 
-        ctl=clingo.Control(['-c maxtime=50'])
-        ctl.load(merger)
-        ctl.load(instance + '.path')
+        for i in range(maxstep,maxstep+50) :
+            maxtime = f'-c maxtime={i}'
+            print('MAXSTEP = ' + maxtime)
 
-        start=time.time()
-        ctl.ground([("base", [])])
-        grounding_time=time.time()-start
+            ctl=clingo.Control([maxtime])
+            ctl.load(merger)
+            ctl.load(instance + '.path')
 
-        result=[]
-        ctl.solve(on_model=lambda m: result.append((("{}".format(m)))))
+            start=time.time()
+            ctl.ground([("base", [])])
+            grounding_time=time.time()-start
 
-        if result:
-            result = result[-1].replace(' ', '. ') + '.'
+            result=[]
+            ctl.solve(on_model=lambda m: result.append((("{}".format(m)))),on_finish=print)
+            # print(ctl.)
 
-        metrics = [self.pos_metric(instance+'.path', result),self.time_metric(instance+'.path', result)]
+            if result:
+                result = result[-1].replace(' ', '. ') + '.'
+                metrics = [self.pos_metric(instance+'.path', result),self.time_metric(instance+'.path', result)]
+                return ctl,grounding_time,result,metrics
 
-        return ctl,grounding_time,result,metrics
+        print('No solution')
 
             
