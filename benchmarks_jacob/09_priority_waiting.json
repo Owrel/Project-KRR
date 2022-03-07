@@ -1,0 +1,20 @@
+{
+    "groupName": "Nils, Daniel & Jakob",
+    "solverName": "Plan Switching + Waiting - Sequential multishot Approach",
+    "problemType": null,
+    "objective": "Sum of timesteps for all robots, number of collisions left",
+    "objective_cost": [
+        64,
+        0
+    ],
+    "instance": "09_priority_waiting",
+    "statistics": {
+        "groundingTime": 0.01854681968688965,
+        "solvingTime": 0.0017142295837402344,
+        "total": 0.020261049270629883,
+        "atoms": 718.0,
+        "rules": 808.0
+    },
+    "info": "Number of models:6",
+    "model": "occurs(object(robot,1),action(move,(0,0)),1).\noccurs(object(robot,2),action(move,(0,0)),1).\noccurs(object(robot,1),action(move,(1,0)),3).\noccurs(object(robot,1),action(move,(1,0)),4).\noccurs(object(robot,2),action(move,(1,0)),2).\noccurs(object(robot,2),action(move,(1,0)),3).\noccurs(object(robot,2),action(move,(1,0)),4).\noccurs(object(robot,2),action(move,(1,0)),5).\noccurs(object(robot,2),action(move,(1,0)),6).\noccurs(object(robot,3),action(move,(1,0)),1).\noccurs(object(robot,3),action(move,(1,0)),2).\noccurs(object(robot,3),action(move,(1,0)),3).\noccurs(object(robot,3),action(move,(1,0)),4).\noccurs(object(robot,3),action(move,(1,0)),5).\noccurs(object(robot,1),action(move,(0,1)),2).\noccurs(object(robot,1),action(move,(0,-1)),5).\noccurs(object(robot,2),action(move,(0,-1)),7).\noccurs(object(robot,3),action(move,(0,-1)),6)."
+}

@@ -1,0 +1,20 @@
+{
+    "groupName": "Nils, Daniel & Jakob",
+    "solverName": "Plan Switching + Waiting - Sequential multishot Approach",
+    "problemType": null,
+    "objective": "Sum of timesteps for all robots, number of collisions left",
+    "objective_cost": [
+        36,
+        0
+    ],
+    "instance": "12_shelf_in_the_way",
+    "statistics": {
+        "groundingTime": 0.02390432357788086,
+        "solvingTime": 0.001322031021118164,
+        "total": 0.025226354598999023,
+        "atoms": 659.0,
+        "rules": 715.0
+    },
+    "info": "Number of models:6",
+    "model": "occurs(object(robot,1),action(move,(0,-1)),3).\noccurs(object(robot,1),action(move,(0,-1)),4).\noccurs(object(robot,1),action(move,(0,-1)),5).\noccurs(object(robot,1),action(move,(1,0)),1).\noccurs(object(robot,1),action(move,(1,0)),2).\noccurs(object(robot,2),action(move,(0,-1)),2).\noccurs(object(robot,2),action(move,(0,-1)),3).\noccurs(object(robot,2),action(move,(0,-1)),4).\noccurs(object(robot,2),action(move,(-1,0)),5).\noccurs(object(robot,2),action(move,(-1,0)),6).\noccurs(object(robot,2),action(move,(-1,0)),1)."
+}

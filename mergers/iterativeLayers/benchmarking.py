@@ -55,46 +55,42 @@ def benchmark_to_json(benchmark, model,instance, time):
         "model": model
     }
 
-if __name__ =="__main__":
-    max_total_time_second = 1800
-    for folder in [x[0] for x in os.walk("checkable_examples")]:
-        print("folder: ",folder)
-        folder_wo_slashes = folder.replace("\\", "")
 
-        iteration = Iterations()
-        if(folder == "checkable_examples"): continue
+max_total_time_second = 1800
+for folder in [x[0] for x in os.walk("checkable_examples")]:
+    print("folder: ",folder)
+    folder_wo_slashes = folder.replace("\\", "")
 
-        # read instance
-        with open(folder+"/originalPlan.lp", 'r') as file:
-            iteration.original_plan = remove_comments_and_newlines(file.read())
-        with open(folder+"/originalWarehouse.lp", 'r') as file:
-            iteration.original_warehouse = remove_comments_and_newlines(file.read())
-        timestart = time.time()
-        queue = multiprocessing.Queue()
-        proc = multiprocessing.Process(target = ProcessEnlosed().start_merging, args=(iteration, queue,))
-        proc.start()
-        queuedata = []
-        while proc.is_alive() and (time.time()-timestart)<max_total_time_second:
-            if( not queue.empty()):
-                queuedata.append(queue.get())
-            if(len(queuedata)>=2):
-                if(not queuedata[0]):
-                    break
-                if(not queuedata[1]):
-                    break
-                if(len(queuedata)==4):
-                    break
-        if(time.time()-timestart > max_total_time_second):
-            print("max time reached")
-            proc.terminate()
-            continue
-        else:
-            while not queue.empty():
-                queuedata.append(queue.get())
-            if (queuedata.length < 3):
-                continue
+    iteration = Iterations()
+    if(folder == "checkable_examples"): continue
 
-            timetaken = time.time()-timestart
+    # read instance
+    with open(folder+"/originalPlan.lp", 'r') as file:
+        iteration.original_plan = remove_comments_and_newlines(file.read())
+    with open(folder+"/originalWarehouse.lp", 'r') as file:
+        iteration.original_warehouse = remove_comments_and_newlines(file.read())
+    timestart = time.time()
+    queue = multiprocessing.Queue()
+    proc = multiprocessing.Process(target = ProcessEnlosed().start_merging, args=(iteration, queue,))
+    proc.start()
+    queuedata = []
+    while proc.is_alive() and (time.time()-timestart)<max_total_time_second:
+        if( not queue.empty()):
+            queuedata.append(queue.get())
+        if(len(queuedata)>=2):
+            if(not queuedata[0]):
+                break
+            if(not queuedata[1]):
+                break
+            if(len(queuedata)==4):
+                break
+    if(time.time()-timestart > max_total_time_second):
+        print("max time reached")
+        proc.terminate()
+        continue
+    else:
+        timetaken = time.time()-timestart
+        try :
             hasmodel = queuedata[0]
             hasbenchmark =queuedata[1]
             if(not hasmodel):
@@ -108,13 +104,16 @@ if __name__ =="__main__":
                 except AttributeError as err:
                     hasbenchmark = False
             proc.terminate()
+        except:
+            pass
 
-        resultfolder = "working_examples/"+folder.replace("checkable_examples\\","")
-        Path(resultfolder).mkdir(parents=True, exist_ok=True)
-        if(hasmodel != None):
-            with open(resultfolder+"/model.lp", 'w') as file:
-                file.write(model)
-            if(hasbenchmark):
-                with open(resultfolder+"/statistics.lp", 'w') as file:
-                    file.write(json.dumps(benchmark_to_json(benchmark, model, folder.replace("checkable_examples\\",""), timetaken), indent=4))
-        # check whether merging worked
+
+    resultfolder = "working_examples/"+folder.replace("checkable_examples\\","")
+    Path(resultfolder).mkdir(parents=True, exist_ok=True)
+    if(hasmodel != None):
+        with open(resultfolder+"/model.lp", 'w') as file:
+            file.write(model)
+        if(hasbenchmark):
+            with open(resultfolder+"/statistics.lp", 'w') as file:
+                file.write(json.dumps(benchmark_to_json(benchmark, model, folder.replace("checkable_examples\\",""), timetaken), indent=4))
+    # check whether merging worked

@@ -22,9 +22,10 @@ def merger(encodings_path, benchmark, save_dir):
     # step 1
     f = files.ReadFile(benchmark)
     m = clg.solve(f, encoding1)
+
+    
     acc_stats.add(m)
 
-    print(m.model)
 
     # step 2
     m = clg.solve(m.model, encoding2)

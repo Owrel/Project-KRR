@@ -25,7 +25,7 @@ if __name__ == '__main__':
 	import multiprocessing
 	import time 
 
-	files = glob.glob('/home/owrel/Documents/MASTER_2/Project-KRR/common_instances/*.lp')
+	files = glob.glob('/home/owrel/Documents/MASTER_2/Project-KRR/instances_jacob/*.lp')
 	files.sort()
 	print(files)
 	# print()

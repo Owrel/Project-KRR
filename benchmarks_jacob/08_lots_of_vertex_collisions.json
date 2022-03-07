@@ -1,0 +1,20 @@
+{
+    "groupName": "Nils, Daniel & Jakob",
+    "solverName": "Plan Switching + Waiting - Sequential multishot Approach",
+    "problemType": null,
+    "objective": "Sum of timesteps for all robots, number of collisions left",
+    "objective_cost": [
+        302,
+        0
+    ],
+    "instance": "08_lots_of_vertex_collisions",
+    "statistics": {
+        "groundingTime": 0.06626749038696289,
+        "solvingTime": 0.005866050720214844,
+        "total": 0.07213354110717773,
+        "atoms": 4729.0,
+        "rules": 6115.0
+    },
+    "info": "Number of models:10",
+    "model": "occurs(object(robot,1),action(move,(0,0)),1).\noccurs(object(robot,4),action(move,(0,0)),1).\noccurs(object(robot,1),action(move,(1,0)),8).\noccurs(object(robot,1),action(move,(1,0)),9).\noccurs(object(robot,2),action(move,(1,0)),4).\noccurs(object(robot,2),action(move,(1,0)),7).\noccurs(object(robot,2),action(move,(1,0)),8).\noccurs(object(robot,2),action(move,(1,0)),9).\noccurs(object(robot,3),action(move,(1,0)),5).\noccurs(object(robot,3),action(move,(1,0)),6).\noccurs(object(robot,3),action(move,(1,0)),7).\noccurs(object(robot,3),action(move,(1,0)),8).\noccurs(object(robot,4),action(move,(1,0)),9).\noccurs(object(robot,4),action(move,(1,0)),10).\noccurs(object(robot,5),action(move,(1,0)),3).\noccurs(object(robot,5),action(move,(1,0)),6).\noccurs(object(robot,5),action(move,(1,0)),7).\noccurs(object(robot,5),action(move,(1,0)),8).\noccurs(object(robot,6),action(move,(1,0)),4).\noccurs(object(robot,6),action(move,(1,0)),5).\noccurs(object(robot,6),action(move,(1,0)),6).\noccurs(object(robot,6),action(move,(1,0)),7).\noccurs(object(robot,1),action(move,(0,1)),5).\noccurs(object(robot,1),action(move,(0,1)),6).\noccurs(object(robot,1),action(move,(0,1)),7).\noccurs(object(robot,2),action(move,(0,1)),5).\noccurs(object(robot,2),action(move,(0,1)),6).\noccurs(object(robot,3),action(move,(0,1)),3).\noccurs(object(robot,3),action(move,(0,1)),4).\noccurs(object(robot,4),action(move,(0,1)),11).\noccurs(object(robot,5),action(move,(0,1)),9).\noccurs(object(robot,6),action(move,(0,1)),8).\noccurs(object(robot,1),action(move,(0,0)),2).\noccurs(object(robot,2),action(move,(0,0)),1).\noccurs(object(robot,4),action(move,(0,0)),2).\noccurs(object(robot,4),action(move,(0,0)),3).\noccurs(object(robot,5),action(move,(0,0)),1).\noccurs(object(robot,1),action(move,(0,0)),3).\noccurs(object(robot,2),action(move,(0,0)),2).\noccurs(object(robot,1),action(move,(0,0)),4).\noccurs(object(robot,2),action(move,(0,0)),3).\noccurs(object(robot,4),action(move,(0,0)),4).\noccurs(object(robot,3),action(move,(0,0)),1).\noccurs(object(robot,5),action(move,(0,0)),2).\noccurs(object(robot,4),action(move,(0,0)),5).\noccurs(object(robot,3),action(move,(-1,0)),2).\noccurs(object(robot,6),action(move,(-1,0)),1).\noccurs(object(robot,1),action(move,(0,-1)),10).\noccurs(object(robot,2),action(move,(0,-1)),10).\noccurs(object(robot,3),action(move,(0,-1)),9).\noccurs(object(robot,4),action(move,(0,-1)),6).\noccurs(object(robot,4),action(move,(0,-1)),7).\noccurs(object(robot,4),action(move,(0,-1)),8).\noccurs(object(robot,5),action(move,(0,-1)),4).\noccurs(object(robot,5),action(move,(0,-1)),5).\noccurs(object(robot,6),action(move,(0,-1)),2).\noccurs(object(robot,6),action(move,(0,-1)),3)."
+}
