@@ -89,6 +89,11 @@ if __name__ =="__main__":
             proc.terminate()
             continue
         else:
+            while not queue.empty():
+                queuedata.append(queue.get())
+            if (queuedata.length < 3):
+                continue
+
             timetaken = time.time()-timestart
             hasmodel = queuedata[0]
             hasbenchmark =queuedata[1]
