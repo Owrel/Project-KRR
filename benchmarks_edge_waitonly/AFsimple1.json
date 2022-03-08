@@ -1,0 +1,19 @@
+{
+    "groupName": "Aur\u00e9lien & Florian",
+    "solverName": "Target Assignment - Node Approach diamond + corridor",
+    "objective": "timespan",
+    "instance": "AFsimple1",
+    "ret": true,
+    "statistics": {
+        "groudingTime": 0.0023179054260253906,
+        "solvingtime": 0.0041350000000000015,
+        "total": 0.006452905426025392,
+        "atoms": 198.0,
+        "rules": 225.0
+    },
+    "model": "new_step(1,1,0,1). new_step(1,2,1,1). new_step(2,2,2,1). new_step(3,2,3,1). new_step(4,2,4,1). occurs(object(robot,1),action(move,(0,1)),0). occurs(object(robot,1),action(move,(1,0)),1). occurs(object(robot,1),action(move,(1,0)),2). occurs(object(robot,1),action(move,(1,0)),3). goalReached(1,4).",
+    "additionnal": [
+        5,
+        0
+    ]
+}

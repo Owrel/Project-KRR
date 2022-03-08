@@ -1,0 +1,19 @@
+{
+    "groupName": "Aur\u00e9lien & Florian",
+    "solverName": "Target Assignment - Node Approach diamond + corridor",
+    "objective": "timespan",
+    "instance": "07_three_vertex_collisions",
+    "ret": true,
+    "statistics": {
+        "groudingTime": 0.0038559436798095703,
+        "solvingtime": 0.007183999999999999,
+        "total": 0.01103994367980957,
+        "atoms": 341.0,
+        "rules": 595.0
+    },
+    "model": "goalReached(1,6). goalReached(2,6). goalReached(3,6). new_step(1,0,1,4). new_step(2,0,2,5). new_step(3,0,3,4). new_step(3,1,3,4). new_step(2,1,2,5). new_step(1,1,2,4). new_step(2,2,2,4). new_step(3,2,3,4). new_step(1,2,2,3). new_step(2,3,2,3). new_step(3,3,2,4). new_step(1,3,2,2). new_step(2,4,2,2). new_step(3,4,2,3). new_step(1,4,1,2). new_step(2,5,2,1). new_step(1,5,1,2). new_step(3,5,2,2). new_step(1,6,1,2). new_step(2,6,2,1). new_step(3,6,3,2). occurs(object(robot,1),action(move,(1,0)),1). occurs(object(robot,1),action(move,(0,-1)),2). occurs(object(robot,1),action(move,(0,-1)),3). occurs(object(robot,1),action(move,(-1,0)),4). occurs(object(robot,2),action(move,(0,-1)),2). occurs(object(robot,2),action(move,(0,-1)),3). occurs(object(robot,2),action(move,(0,-1)),4). occurs(object(robot,2),action(move,(0,-1)),5). occurs(object(robot,3),action(move,(-1,0)),3). occurs(object(robot,3),action(move,(0,-1)),4). occurs(object(robot,3),action(move,(0,-1)),5). occurs(object(robot,3),action(move,(1,0)),6).",
+    "additionnal": [
+        0,
+        6
+    ]
+}

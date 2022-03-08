@@ -37,10 +37,10 @@ import glob
 import multiprocessing
 import time 
 
-gm = graphmerger.GraphMerger(merger='mergers/NodeApproach/DiamondCorridor.lp', reseting=True)
-files = glob.glob('/home/owrel/Documents/MASTER_2/Project-KRR/instances/*.lp')
+gm = graphmerger.GraphMerger(merger='mergers/NodeApproach/WaitOnly.lp', reseting=True)
+files = glob.glob('/home/owrel/Documents/MASTER_2/Project-KRR/common_instances/*.lp')
 files.sort()
-print(files)
+# print(files)
 # print()
 notsat = 0
 for instance in files:
@@ -49,7 +49,7 @@ for instance in files:
     # print(instance == bm)
     t = multiprocessing.Process(target=computemerger, args=(instance,gm,))
     t.start()
-    for i in range(0,360):
+    for i in range(0,60):
         if t.is_alive():
             time.sleep(1)
 
